@@ -3,27 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Babybear Studio 🧸</title>
+<title>Babybear Studio 🎨</title>
 <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* โทนสีม่วง-ชมพู */
-    --pink1: #fde8f5;
-    --pink2: #f5b8d8;
-    --pink3: #e880b8;
-    --pink4: #c85090;
-    --purple1: #f3e8ff;
-    --purple2: #d8b4fe;
-    --purple3: #a855f7;
-    --hot: #b03078;
-    --text: #5e2a4a;
-    --textl: #a06a8a;
+    --pink1: #fff0f6;
+    --pink2: #ffdeeb;
+    --pink3: #f06292;
+    --pink4: #d81b60;
+    --hot: #ad1457;
+    --lavender: #f3e5f5;
+    --lav2: #ba68c8;
+    --yellow: #fff9c4;
+    --mint: #e0f2f1;
+    --sky: #e1f5fe;
+    --cream: #fff8fb;
+    --text: #4a148c;
+    --textl: #8e24aa;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
 font-family: 'Mitr', sans-serif;
-background: linear-gradient(160deg, #f3e8ff 0%, #fde8f5 50%, #ffffff 100%);
+background: linear-gradient(160deg, #f3e5f5 0%, #fce4ec 50%, #f8bbd0 100%);
 min-height: 100vh;
 color: var(--text);
 overflow-x: hidden;
@@ -33,8 +35,8 @@ body::before {
 content: '';
 position:fixed; inset:0;
 background:
-radial-gradient(circle at 15% 15%, rgba(216,180,254,0.3) 0%, transparent 45%),
-radial-gradient(circle at 85% 85%, rgba(245,184,216,0.25) 0%, transparent 45%);
+radial-gradient(circle at 15% 15%, rgba(243,229,245,0.4) 0%, transparent 45%),
+radial-gradient(circle at 85% 85%, rgba(248,187,208,0.35) 0%, transparent 45%);
 pointer-events:none; z-index:0;
 }
 
@@ -44,11 +46,12 @@ pointer-events:none; z-index:0;
 .sp:nth-child(3){top:38%;left:2%;font-size:12px;animation-delay:2s;}
 .sp:nth-child(4){top:55%;right:4%;font-size:20px;animation-delay:.5s;}
 .sp:nth-child(5){bottom:22%;left:7%;font-size:16px;animation-delay:1.5s;}
+.sp:nth-child(6){bottom:8%;right:6%;font-size:11px;animation-delay:2.5s;}
 @keyframes fl {0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(-14px) rotate(8deg);}}
 
 .wrap { max-width:480px; margin:0 auto; padding:16px 14px 60px; position:relative; z-index:1; }
 
-/* HEADER - โลโก้วงกลมมีกรอบ */
+/* HEADER */
 .header { text-align:center; padding:35px 0 20px; animation:fadeUp .7s ease both; }
 
 .logo-wrapper {
@@ -57,24 +60,26 @@ pointer-events:none; z-index:0;
   justify-content: center;
 }
 .logo-img {
-  width: 150px; 
-  height: 150px;
+  width: 140px; 
+  height: 140px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #fff;
-  outline: 2px solid var(--pink2);
-  box-shadow: 0 8px 20px rgba(200,80,150,0.2);
+  border: 4px solid #fff;
+  box-shadow: 0 8px 25px rgba(173,20,87,0.25);
   background: #fff;
 }
 
 .shop-name {
-font-size:2.2rem; font-weight:700;
+font-size:2rem; font-weight:700;
 color: var(--pink4);
 letter-spacing:1px;
-text-shadow: 2px 2px 4px rgba(200,80,150,0.15);
-display: flex; align-items: center; justify-content: center; gap: 10px;
+text-shadow: 2px 2px 4px rgba(173,20,87,0.1);
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
 }
-.shop-sub { font-size:.85rem; color:var(--textl); margin-top:8px; line-height:1.7; }
+.shop-sub { font-size:.85rem; color:var(--textl); margin-top:8px; line-height:1.7; padding:0 10px; }
 
 .badges { display:flex; justify-content:center; gap:7px; flex-wrap:wrap; margin-top:11px; }
 .badge {
@@ -85,12 +90,20 @@ font-size:.72rem; color:var(--pink4); font-weight:500;
 
 /* CARDS */
 .card {
-background:rgba(255,255,255,.74); backdrop-filter:blur(12px);
-border:1.5px solid rgba(232,160,200,.45);
+background:rgba(255,255,255,.8); backdrop-filter:blur(12px);
+border:1.5px solid rgba(240,98,146,.3);
 border-radius:22px; padding:20px 18px; margin-bottom:14px;
-box-shadow:0 4px 18px rgba(200,80,150,.1), inset 0 1px 0 rgba(255,255,255,.8);
+box-shadow:0 4px 18px rgba(173,20,87,.08), inset 0 1px 0 rgba(255,255,255,0.9);
 position:relative; overflow:hidden;
 animation:fadeUp .6s ease both;
+}
+.card:nth-child(n){animation-delay:.1s;}
+
+.card::before {
+content: ''; position:absolute; top:-40px; right:-40px;
+width:110px; height:110px;
+background:radial-gradient(circle,rgba(240,98,146,.15) 0%,transparent 70%);
+border-radius:50%;
 }
 
 .ct { font-size:.98rem; font-weight:600; color:var(--pink4); margin-bottom:13px; display:flex; align-items:center; gap:8px; }
@@ -98,164 +111,227 @@ animation:fadeUp .6s ease both;
 
 /* status */
 .status-box {
-background:linear-gradient(135deg,#fff0f7,#f5e8ff);
+background:linear-gradient(135deg,#fff0f6,#f3e5f5);
 border:1.5px dashed var(--pink3); border-radius:16px;
 padding:15px; text-align:center; margin-bottom:14px;
+animation:fadeUp .5s .12s ease both;
 }
-.s-open { font-size:1.2rem; font-weight:600; color:var(--hot); }
+.s-open { font-size:1.1rem; font-weight:600; color:var(--hot); }
 .s-dot { display:inline-block; width:10px;height:10px; background:#6fcf97; border-radius:50%; margin-right:6px; box-shadow:0 0 0 4px rgba(111,207,151,.25); animation:blink 2s ease-in-out infinite; }
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:.35;}}
 
-.div { text-align:center; color:var(--pink3); font-size:.85rem; letter-spacing:7px; margin:4px 0 14px; }
-
-/* highlight box */
-.hi-box {
-background:linear-gradient(135deg,var(--pink3),var(--purple2));
-border-radius:16px; padding:13px 16px; color:#fff;
-text-align:center; margin-bottom:12px;
-box-shadow:0 6px 20px rgba(200,80,150,.2);
-}
+/* divider */
+.div { text-align:center; color:var(--pink3); font-size:.85rem; letter-spacing:7px; margin:20px 0 14px; font-weight: bold;}
 
 /* links */
 .lnk {
 display:flex; align-items:center; gap:10px;
-background:linear-gradient(135deg,#fff5fb,#f5f0ff);
-border:1.5px solid rgba(232,160,200,.3); border-radius:14px;
-padding:11px 14px; text-decoration:none; color:var(--text);
+background:linear-gradient(135deg,#fffafa,#f8f0ff);
+border:1.5px solid rgba(240,98,146,.2); border-radius:14px;
+padding:10px 14px; text-decoration:none; color:var(--text);
 font-size:.84rem; transition:all .2s; margin-bottom:9px;
 }
-.lnk:hover { transform:translateX(4px); border-color: var(--pink3); }
+.lnk:hover { transform:translateX(4px); background:#fff; }
+.lnk:last-child { margin-bottom:0; }
 .lnk-ic { font-size:1.3rem; flex-shrink:0; }
 .lnk-name { font-weight:600; font-size:.88rem; color:var(--pink4); margin-bottom:2px; }
 .lnk-desc { font-size:.75rem; color:var(--textl); }
 
-/* pay-pill */
+/* payment */
 .pay-row { display:flex; gap:8px; flex-wrap:wrap; }
 .pay-pill {
-background:#fff; border:1px solid var(--pink2); border-radius:10px;
-padding:6px 12px; font-size:.75rem; color:var(--text);
+background:linear-gradient(135deg,#fff0f6,#f3e5f5);
+border:1.5px solid rgba(240,98,146,.2); border-radius:12px;
+padding:6px 12px; font-size:.78rem; color:var(--text);
+display:flex; align-items:center; gap:5px;
 }
+
+/* highlight box */
+.hi-box {
+background:linear-gradient(135deg,var(--pink3),var(--lav2));
+border-radius:16px; padding:13px 16px; color:#fff;
+text-align:center; margin-bottom:12px;
+box-shadow:0 6px 20px rgba(173,20,87,.2);
+}
+.hi-box b { font-size:1.05rem; }
+.hi-box small { font-size:.78rem; opacity:.9; }
 
 /* CTA */
-.cta-wrap { text-align:center; padding:8px 0; }
+.cta-wrap { text-align:center; padding:8px 0; animation:fadeUp .6s .6s ease both; }
 .cta-btn {
 display:inline-block; width:100%; max-width:300px;
-background:linear-gradient(135deg,var(--pink3),var(--purple2));
+background:linear-gradient(135deg,var(--pink3),var(--lav2));
 color:#fff; font-family: 'Mitr', sans-serif;
 font-size:1rem; font-weight:500; padding:14px 36px;
-border-radius:50px; text-decoration:none;
-box-shadow:0 8px 24px rgba(200,80,150,.3);
-transition:all .3s;
+border-radius:50px; text-decoration:none; border:none; cursor:pointer;
+box-shadow:0 8px 24px rgba(173,20,87,.3), inset 0 1px 0 rgba(255,255,255,.3);
+transition:all .3s; animation:glow 3s ease-in-out infinite;
 }
-.cta-btn:hover { transform:translateY(-3px); }
+@keyframes glow{0%,100%{box-shadow:0 8px 24px rgba(173,20,87,.3),inset 0 1px 0 rgba(255,255,255,.3);}50%{box-shadow:0 10px 36px rgba(173,20,87,.5),inset 0 1px 0 rgba(255,255,255,.3);}}
+.cta-btn:hover { transform:translateY(-3px) scale(1.03); }
 
+/* footer */
 .footer { text-align:center; padding:16px 0 8px; font-size:.73rem; color:var(--textl); }
+.socs { display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+.soc {
+background:#fff; border:1.5px solid var(--pink2);
+border-radius:20px; padding:6px 15px;
+font-size:.78rem; color:var(--text); text-decoration:none; transition:all .2s;
+}
+.soc:hover { background:var(--pink1); transform:translateY(-2px); }
 
 @keyframes fadeUp { from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);} }
 </style>
 
 </head>
 <body>
-<div class="sp">🧸</div>
-<div class="sp">✨</div>
 <div class="sp">☁️</div>
-<div class="sp">🌸</div>
-<div class="sp">⋆</div>
+<div class="sp">🎀</div>
+<div class="sp">🎨</div>
+<div class="sp">✨</div>
+<div class="sp">🧸</div>
+<div class="sp">💖</div>
 
 <div class="wrap">
   <div class="header">
     <div class="logo-wrapper">
-      <img src="logo.jpg" alt="Babybear Logo" class="logo-img">
+      <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/c97693827cf5d484ba91119892f3f218.jpeg" alt="Babybear Logo" class="logo-img">
     </div>
-    
-    <div class="shop-name">Babybear Studio</div>
+    <div class="shop-name">🧸 Babybear Studio 🧸</div>
     <div class="shop-sub">
-      🧸 ยินดีต้อนรับสู่ร้าน Babybear Studio ค้าบ<br>
-      กิ้บยินดีให้บริการทุกท่าน สนใจทักถามได้เลยน้า
+      ยินดีต้อนรับสู่ร้าน “ Babybear Studio “ ค้าบ<br>
+      กิ้บยินดีให้บริการทุกท่านที่เข้ามาใช้บริการนะคะ ✨
     </div>
     <div class="badges">
       <span class="badge">🎨 รับทำป้าย</span>
       <span class="badge">💧 ลายน้ำ</span>
-      <span class="badge">🧸 กิ้บยินดีให้บริการ</span>
+      <span class="badge">📢 งาน Ads</span>
     </div>
   </div>
 
-  <div class="div">✦ · · ✦ · · ✦</div>
-
   <div class="status-box">
-    <div class="s-open"><span class="s-dot"></span>มีค้าบ พร้อมรับออเดอร์นะคะ ✨</div>
+    <div class="s-open"><span class="s-dot"></span>มีค้าบ พร้อมให้บริการค่ะ 🎀</div>
   </div>
 
   <div class="card">
     <div class="ct"><span class="ic">🎨</span> งานที่รับทำ</div>
-    <div style="font-size:.88rem;line-height:1.9;">
-      แนวมืด 𓈒 แนว Ads 𓈒 แนวทางการ<br>
-      แนวกึ่งน่ารัก 𓈒 แนวน่ารัก<br><br>
-      <b>💰 ราคางานเริ่มต้น :</b> 99฿+<br>
-      <b>💧 ลายน้ำเริ่มต้น :</b> 69฿+
+    <div style="font-size:.85rem;line-height:1.8;color:var(--text);">
+      • แนวมืด • แนว Ads • แนวทางการ<br>
+      • แนวกึ่งน่ารัก • แนวน่ารัก<br><br>
+      💰 <b>ราคางานเริ่มต้น:</b> 99฿ +<br>
+      💧 <b>ลายน้ำเริ่มต้น:</b> 69฿ +
     </div>
     <div class="hi-box" style="margin-top:12px; margin-bottom:0;">
-      <b>💝 มีราคาเหมา! สั่งเยอะมีส่วนลด + ของแถม</b>
+      <b>🎁 โปรโมชั่นพิเศษ</b><br>
+      <small>สั่งเยอะมีส่วนลด & ของแถมพิเศษให้ตลอดค้า</small>
     </div>
   </div>
 
   <div class="card">
-    <div class="ct"><span class="ic">⏱️</span> ระยะเวลาทำงาน (คิว)</div>
-    <div style="font-size:.85rem;line-height:1.8;">
-      🗓️ <b>คิวปกติ:</b> 3-7 วัน หรือมากกว่า<br>
-      🚀 <b>คิวเร่ง:</b> 2-3 วัน หรือมากกว่า<br>
-      🔥 <b>คิวเร่งไฟ:</b> 24 ชั่วโมง หรือมากกว่า<br>
-      ⚡ <b>คิวเร่งไฟลุก:</b> 12 ชั่วโมง หรือมากกว่า
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="ct"><span class="ic">📝</span> ขั้นตอนการสั่ง</div>
-    <div style="font-size:.85rem;line-height:1.8;">
-      การสั่งงาน <b>ทักหากิ้บได้เลยนะคะ</b><br>
-      เดี๋ยวกิ้บจะส่งรายละเอียดการสั่งงาน<br>
-      ให้ทางแชทส่วนตัวค้าบ 💬
+    <div class="ct"><span class="ic">📋</span> ระยะเวลาทำงาน</div>
+    <div style="font-size:.84rem;line-height:1.8;color:var(--text);">
+      ⏱️ <b>คิวปกติ:</b> 3-7 วัน หรือมากกว่า<br>
+      ⚡ <b>คิวเร่ง:</b> 2-3 วัน หรือมากกว่า<br>
+      🔥 <b>คิวเร่งไฟ:</b> ภายใน 24 ชม.<br>
+      💥 <b>คิวเร่งไฟลุก:</b> ภายใน 12 ชม.
     </div>
   </div>
 
   <div class="card">
     <div class="ct"><span class="ic">💳</span> ช่องทางชำระเงิน</div>
     <div class="pay-row">
-      <div class="pay-pill">🏦 กสิกรไทย</div>
-      <div class="pay-pill">🏦 กรุงเทพ</div>
-      <div class="pay-pill">🏦 กรุงไทย</div>
-      <div class="pay-pill">🩷 True Wallet</div>
+      <div class="pay-pill">🏦 กสิกร / กรุงเทพ / กรุงไทย</div>
+      <div class="pay-pill">💖 True Wallet</div>
     </div>
   </div>
 
+  <div class="div">🧸 กลุ่มในเครือ 🧸</div>
+
   <div class="card">
-    <div class="ct"><span class="ic">📱</span> ช่องทางติดต่อ</div>
+    <div class="ct"><span class="ic">📦</span> Babybear Box Group V1</div>
+    <div style="font-size:.82rem;line-height:1.7;color:var(--text);margin-bottom:10px;">
+      ꒰ กลุ่มบล็อคสุดน่ารักที่ทำได้ทั้งแนวน่ารัก,แนวเกม ꒱<br>
+      ⋆·˚ ༘ * มีของแต่งเฉพาะกลุ่มและไม่เฉพาะด้วย<br>
+      യ <b>ค่าเข้า 89 บาท</b> · แอดมินใจดี ดึงเมลไวมาก ♡̷̷̷
+    </div>
+    <a href="https://drive.google.com/drive/folders/1NAGLOk76_A7IiOaQ2fpkp3pkvhyx8gC3" class="lnk" target="_blank">
+      <span class="lnk-ic">🖼️</span>
+      <div><div class="lnk-name">Example Box V1</div><div class="lnk-desc">คลิกเพื่อดูตัวอย่างผลงานในกลุ่มค่ะ</div></div>
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="ct"><span class="ic">🎁</span> Babybear Box V2</div>
+    <div style="font-size:.82rem;line-height:1.7;color:var(--text);margin-bottom:10px;">
+      ꔛ กลุ่มบล็อคเวอร์ชั่น 2 เปิดแล้วค้า ทำได้ทั้งแนวน่ารักและกึ่งAds ꔛ<br>
+      📎 อัพบล็อคสุดเฉพาะ 30 บล็อคจึ้งๆ<br>
+      🤍🧸 <b>ราคา 99 บาท เท่านั้น ❕</b>
+    </div>
+    <a href="https://drive.google.com/drive/folders/13EpXohkJY-dJRZg0_3NxkAuGNjJrtUHi" class="lnk" target="_blank">
+      <span class="lnk-ic">🖼️</span>
+      <div><div class="lnk-name">Example Box V2</div><div class="lnk-desc">คลิกเพื่อดูตัวอย่างเวอร์ชั่น 2 ค่ะ</div></div>
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="ct"><span class="ic">✨</span> Babybear Box Group V3</div>
+    <div style="font-size:.82rem;line-height:1.7;color:var(--text);margin-bottom:10px;">
+      • กลุ่มบล็อคสุดเฉพาะเวอร์ชั่น 3 อัพทั้งหมด 33 บล็อค<br>
+      อัพบล็อคที่สามารถแต่งได้ทุกแนวเลย แอดมินไม่เทกลุ่มแน่นอน<br>
+      𓊆ྀི <b>ราคาโปร 79฿ เท่านั้นค้าบ </b> 𓊇ྀི
+    </div>
+    <a href="https://drive.google.com/drive/folders/1-DqsTlUnaGKCuyPKdqknSyjOX4oEDhCU" class="lnk" target="_blank">
+      <span class="lnk-ic">🖼️</span>
+      <div><div class="lnk-name">Example Box V3</div><div class="lnk-desc">คลิกเพื่อดูตัวอย่างเวอร์ชั่น 3 ค่ะ</div></div>
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="ct"><span class="ic">✉️</span> Babybear Inbox</div>
+    <div style="font-size:.82rem;line-height:1.7;color:var(--text);margin-bottom:10px;">
+      กลุ่มที่มีกรอบคอนแทคที่ทุกคนตามหา อัพงาน 20+ กรอบ<br>
+      มีอย่างอื่นให้ด้วย กิ้บพร้อมงอกให้ทุกคนใช้ รีบมาเข้ากันน้าา<br>
+      ‎⋆｡˚☽˚ <b>ค่าเข้าโปร 99 บาท •☁︎</b>
+    </div>
+    <a href="https://drive.google.com/drive/folders/1-ZYQuoeuwHIOnu8GdsfXeBslBKocVLJZ" class="lnk" target="_blank">
+      <span class="lnk-ic">🖼️</span>
+      <div><div class="lnk-name">Example Inbox</div><div class="lnk-desc">คลิกเพื่อดูตัวอย่างกรอบคอนแทคค่ะ</div></div>
+    </a>
+  </div>
+
+  <div class="div">📱 ช่องทางติดต่อ 📱</div>
+  <div class="card">
     <a href="https://www.facebook.com/gibmbabybear?" class="lnk" target="_blank">
       <span class="lnk-ic">📘</span>
       <div><div class="lnk-name">Facebook</div><div class="lnk-desc">Gibm ( Babybear )</div></div>
-    </a>
-    <a href="https://line.me/ti/p/_uqlHh74kC" class="lnk" target="_blank">
-      <span class="lnk-ic">💚</span>
-      <div><div class="lnk-name">Line (ID)</div><div class="lnk-desc">kipkip. (มีจุด)</div></div>
-    </a>
-    <a href="https://lin.ee/UdLcwvD" class="lnk" target="_blank">
-      <span class="lnk-ic">💬</span>
-      <div><div class="lnk-name">Line Official</div><div class="lnk-desc">@151jqsev</div></div>
     </a>
     <a href="https://www.instagram.com/_kipm._?" class="lnk" target="_blank">
       <span class="lnk-ic">📸</span>
       <div><div class="lnk-name">Instagram</div><div class="lnk-desc">_kipm._</div></div>
     </a>
-  </div>
-
-  <div class="cta-wrap">
-    <a href="https://www.facebook.com/gibmbabybear?" class="cta-btn" target="_blank">
-      🧸 ติดต่อสั่งงานทาง Facebook
+    <a href="https://line.me/ti/p/_uqlHh74kC" class="lnk" target="_blank">
+      <span class="lnk-ic">💬</span>
+      <div><div class="lnk-name">ID LINE</div><div class="lnk-desc">kipkip. (ทักส่วนตัว)</div></div>
+    </a>
+    <a href="https://lin.ee/UdLcwvD" class="lnk" target="_blank">
+      <span class="lnk-ic">💚</span>
+      <div><div class="lnk-name">Line Official</div><div class="lnk-desc">@151jqsev (สั่งงานหลัก)</div></div>
     </a>
   </div>
 
+  <div class="cta-wrap">
+    <a href="https://lin.ee/UdLcwvD" class="cta-btn" target="_blank">
+      🧸 ติดต่อสั่งงาน / เข้ากลุ่ม
+    </a>
+    <div style="font-size:.8rem;color:var(--textl);margin-top:12px;">กิ้บยินดีให้บริการทุกท่านนะคะ!</div>
+  </div>
+
   <div class="footer">
-    <div>made with 💕 · Babybear Studio · กิ้บยินดีให้บริการ</div>
+    <div class="socs">
+      <a href="https://www.facebook.com/gibmbabybear?" class="soc" target="_blank">Facebook</a>
+      <a href="https://lin.ee/UdLcwvD" class="soc" target="_blank">LINE</a>
+    </div>
+    <div>made with 💕 · Babybear Studio</div>
   </div>
 </div>
 </body>
