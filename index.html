@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* ปรับโทนสีให้สว่างสดใสขึ้น */
     --bg-dark: #7d3c8c; 
     --bg-mid: #a569bd;  
     --pink-accent: #f04e8d;
@@ -24,7 +23,6 @@
 
 body {
 font-family: 'Mitr', sans-serif;
-/* ปรับสีพื้นหลังให้อ่อนลงตามคำขอ */
 background: linear-gradient(160deg, #f9f0ff 0%, #e8d5f5 50%, #d7bde2 100%);
 background-attachment: fixed;
 min-height: 100vh;
@@ -50,13 +48,13 @@ pointer-events:none; z-index:0;
 .sp:nth-child(6){bottom:8%;right:6%;font-size:11px;animation-delay:2.5s;}
 @keyframes fl {0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(-14px) rotate(8deg);}}
 
-.wrap { max-width:480px; margin:0 auto; padding:16px 14px 60px; position:relative; z-index:1; }
+.wrap { max-width:480px; margin:0 auto; padding:10px 14px 40px; position:relative; z-index:1; }
 
 /* HEADER */
-.header { text-align:center; padding:35px 0 20px; animation:fadeUp .7s ease both; }
+.header { text-align:center; padding:25px 0 15px; animation:fadeUp .7s ease both; }
 
 .logo-wrapper {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   display: flex;
   justify-content: center;
 }
@@ -72,17 +70,17 @@ pointer-events:none; z-index:0;
 
 .shop-name {
 font-size:2.2rem; font-weight:700;
-color: var(--bg-dark); /* ปรับสีชื่อร้านให้เข้ากับพื้นหลังอ่อน */
+color: var(--pink-accent); /* ปรับเป็นสีชมพูตามสั่ง */
 letter-spacing:1px;
-text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
 display: flex;
 align-items: center;
 justify-content: center;
 gap: 12px;
 }
-.shop-sub { font-size:.85rem; color: var(--text); margin-top:12px; line-height:1.7; padding:0 10px; opacity: 0.8; }
+.shop-sub { font-size:.85rem; color: var(--text); margin-top:8px; line-height:1.6; padding:0 10px; opacity: 0.8; }
 
-.badges { display:flex; justify-content:center; gap:7px; flex-wrap:wrap; margin-top:11px; }
+.badges { display:flex; justify-content:center; gap:7px; flex-wrap:wrap; margin-top:10px; }
 .badge {
 background:rgba(255,255,255,0.6); border:1px solid var(--pink2);
 backdrop-filter: blur(5px);
@@ -94,36 +92,36 @@ font-size:.72rem; color:var(--bg-dark); font-weight:500;
 .card {
 background:rgba(255,255,255,0.95); backdrop-filter:blur(12px);
 border:1px solid rgba(255,255,255,0.5);
-border-radius:22px; padding:20px 18px; margin-bottom:14px;
-box-shadow:0 10px 25px rgba(125, 60, 140, 0.1);
+border-radius:22px; padding:18px 18px; margin-bottom:12px;
+box-shadow:0 8px 20px rgba(125, 60, 140, 0.08);
 position:relative; overflow:hidden;
 animation:fadeUp .6s ease both;
 }
 
-.ct { font-size:.98rem; font-weight:600; color:var(--bg-dark); margin-bottom:13px; display:flex; align-items:center; gap:8px; }
+.ct { font-size:.98rem; font-weight:600; color:var(--bg-dark); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
 .ct .ic { font-size:1.15rem; }
 
 /* status */
 .status-box {
 background: var(--bg-dark);
 border-radius:16px;
-padding:12px; text-align:center; margin-bottom:14px;
+padding:10px; text-align:center; margin-bottom:12px;
 animation:fadeUp .5s .12s ease both;
-box-shadow: 0 4px 15px rgba(74, 29, 90, 0.2);
+box-shadow: 0 4px 15px rgba(74, 29, 90, 0.15);
 }
 .s-open { font-size:1.1rem; font-weight:600; color:#fff; }
 .s-dot { display:inline-block; width:10px;height:10px; background:#6fcf97; border-radius:50%; margin-right:6px; box-shadow:0 0 10px #6fcf97; animation:blink 2s ease-in-out infinite; }
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:.35;}}
 
-/* Divider Text */
-.div { text-align:center; color:var(--bg-dark); font-size:.95rem; letter-spacing:5px; margin:25px 0 15px; font-weight: 600; opacity: 0.8;}
+/* Divider Text - ปรับให้ชิดกันขึ้น */
+.div { text-align:center; color:var(--bg-dark); font-size:.95rem; letter-spacing:4px; margin:15px 0 10px; font-weight: 600; opacity: 0.8;}
 
-/* Image Preview Style - ปรับให้แสดงผลพอดีแบบดั้งเดิม */
+/* Image Preview Style */
 .group-preview {
   width: 100%;
   height: auto;
   border-radius: 14px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   border: 1px solid var(--pink2);
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   display: block;
@@ -133,20 +131,23 @@ box-shadow: 0 4px 15px rgba(74, 29, 90, 0.2);
 display:flex; align-items:center; gap:10px;
 background:#fff;
 border:1.5px solid rgba(255,133,179,0.2); border-radius:14px;
-padding:10px 14px; text-decoration:none; color:var(--text);
-font-size:.84rem; transition:all .2s; margin-bottom:9px;
+padding:8px 14px; text-decoration:none; color:var(--text);
+font-size:.84rem; transition:all .2s; margin-bottom:6px;
 }
+.lnk:last-child { margin-bottom: 0; }
 .lnk:hover { transform:translateX(4px); background:var(--pink1); border-color: var(--pink3); }
 
-/* ปรับเป็นสีชมพูตามสั่ง */
+/* ราคาสีชมพู */
+.price-pink { color: var(--pink-accent); font-weight: 700; }
+
 .hi-box {
 background: linear-gradient(135deg, var(--pink3), var(--pink4));
-border-radius:16px; padding:13px 16px; color:#fff;
-text-align:center; margin-bottom:12px;
+border-radius:16px; padding:12px 16px; color:#fff;
+text-align:center; margin-bottom:0;
 box-shadow:0 6px 20px rgba(240, 78, 141, 0.2);
 }
 
-.footer { text-align:center; padding:20px 0 8px; font-size:.73rem; color:var(--bg-dark); opacity: 0.6; }
+.footer { text-align:center; padding:15px 0 8px; font-size:.73rem; color:var(--bg-dark); opacity: 0.6; }
 
 @keyframes fadeUp { from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);} }
 </style>
@@ -178,18 +179,18 @@ box-shadow:0 6px 20px rgba(240, 78, 141, 0.2);
   </div>
 
   <div class="status-box">
-    <div class="s-open"><span class="s-dot"></span>เปิดร้านพร้อมให้บริการค่ะ 🎀</div>
+    <div class="s-open"><span class="s-dot"></span>มีค้าบ พร้อมให้บริการค่ะ 🎀</div>
   </div>
 
   <div class="card">
     <div class="ct"><span class="ic">🎨</span> งานที่รับทำ</div>
-    <div style="font-size:.85rem;line-height:1.8;color:var(--text);">
+    <div style="font-size:.85rem;line-height:1.7;color:var(--text);margin-bottom:12px;">
       • แนวมืด • แนว Ads • แนวทางการ<br>
       • แนวกึ่งน่ารัก • แนวน่ารัก<br><br>
-      💰 <b>ราคางานเริ่มต้น:</b> 99฿ +<br>
-      💧 <b>ลายน้ำเริ่มต้น:</b> 69฿ +
+      💰 <b>ราคางานเริ่มต้น:</b> <span class="price-pink">99฿ +</span><br>
+      💧 <b>ลายน้ำเริ่มต้น:</b> <span class="price-pink">69฿ +</span>
     </div>
-    <div class="hi-box" style="margin-top:12px; margin-bottom:0;">
+    <div class="hi-box">
       <b>🎁 โปรโมชั่นพิเศษ</b><br>
       <small>สั่งเยอะมีส่วนลด & ของแถมพิเศษให้ตลอดค้า</small>
     </div>
@@ -200,9 +201,9 @@ box-shadow:0 6px 20px rgba(240, 78, 141, 0.2);
   <div class="card">
     <div class="ct"><span class="ic">📦</span> Babybear Box Group V1</div>
     <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/35e8b96cde048d76df11466e2956c3e9.jpeg" class="group-preview" alt="V1 Preview">
-    <div style="font-size:.82rem;line-height:1.7;color:var(--text);margin-bottom:10px;">
+    <div style="font-size:.82rem;line-height:1.6;color:var(--text);margin-bottom:8px;">
       ꒰ กลุ่มบล็อคสุดน่ารักที่ทำได้ทั้งแนวน่ารัก,แนวเกม ꒱<br>
-      യ <b>ค่าเข้า 89 บาท</b> · แอดมินใจดี ดึงเมลไวมาก ♡̷̷̷
+      യ <b>ค่าเข้า <span class="price-pink">89 บาท</span></b> · ดึงเมลไวมาก ♡̷̷̷
     </div>
     <a href="https://drive.google.com/drive/folders/1NAGLOk76_A7IiOaQ2fpkp3pkvhyx8gC3" class="lnk" target="_blank">
       <span class="lnk-ic">🖼️</span>
@@ -213,9 +214,9 @@ box-shadow:0 6px 20px rgba(240, 78, 141, 0.2);
   <div class="card">
     <div class="ct"><span class="ic">🎁</span> Babybear Box V2</div>
     <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/c5f2a92ae7e509ad3eab0171d8041ddd.jpeg" class="group-preview" alt="V2 Preview">
-    <div style="font-size:.82rem;line-height:1.7;color:var(--text);margin-bottom:10px;">
+    <div style="font-size:.82rem;line-height:1.6;color:var(--text);margin-bottom:8px;">
       ꔛ กลุ่มบล็อคเวอร์ชั่น 2 เปิดแล้วค้า ทำได้ทั้งแนวน่ารักและกึ่งAds ꔛ<br>
-      🤍🧸 <b>ราคา 99 บาท เท่านั้น ❕</b>
+      🤍🧸 <b>ราคา <span class="price-pink">99 บาท</span> เท่านั้น ❕</b>
     </div>
     <a href="https://drive.google.com/drive/folders/13EpXohkJY-dJRZg0_3NxkAuGNjJrtUHi" class="lnk" target="_blank">
       <span class="lnk-ic">🖼️</span>
@@ -226,9 +227,9 @@ box-shadow:0 6px 20px rgba(240, 78, 141, 0.2);
   <div class="card">
     <div class="ct"><span class="ic">✨</span> Babybear Box Group V3</div>
     <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/cc04c20356e769b9872ac9c14cf238d7.jpeg" class="group-preview" alt="V3 Preview">
-    <div style="font-size:.82rem;line-height:1.7;color:var(--text);margin-bottom:10px;">
+    <div style="font-size:.82rem;line-height:1.6;color:var(--text);margin-bottom:8px;">
       • กลุ่มบล็อคสุดเฉพาะเวอร์ชั่น 3 อัพทั้งหมด 33 บล็อค<br>
-      𓊆ྀི <b>ราคาโปร 79฿ เท่านั้นค้าบ </b> 𓊇ྀི
+      𓊆ྀི <b>ราคาโปร <span class="price-pink">79฿</span> เท่านั้นค้าบ </b> 𓊇ྀི
     </div>
     <a href="https://drive.google.com/drive/folders/1-DqsTlUnaGKCuyPKdqknSyjOX4oEDhCU" class="lnk" target="_blank">
       <span class="lnk-ic">🖼️</span>
@@ -239,9 +240,9 @@ box-shadow:0 6px 20px rgba(240, 78, 141, 0.2);
   <div class="card">
     <div class="ct"><span class="ic">✉️</span> Babybear Inbox</div>
     <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/0bee5c27d99a04eb0cfc397108481dc0.jpeg" class="group-preview" alt="Inbox Preview">
-    <div style="font-size:.82rem;line-height:1.7;color:var(--text);margin-bottom:10px;">
+    <div style="font-size:.82rem;line-height:1.6;color:var(--text);margin-bottom:8px;">
       กลุ่มที่มีกรอบคอนแทคที่ทุกคนตามหา อัพงาน 20+ กรอบ<br>
-      ‎⋆｡˚☽˚ <b>ค่าเข้าโปร 99 บาท •☁︎</b>
+      ‎⋆｡˚☽˚ <b>ค่าเข้าโปร <span class="price-pink">99 บาท</span> •☁︎</b>
     </div>
     <a href="https://drive.google.com/drive/folders/1-ZYQuoeuwHIOnu8GdsfXeBslBKocVLJZ" class="lnk" target="_blank">
       <span class="lnk-ic">🖼️</span>
