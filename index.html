@@ -7,21 +7,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
+    /* ปรับโทนสีหลักให้เข้มขึ้นตามโลโก้ */
+    --bg-dark: #4a1d5a; /* ม่วงเข้มแบบพื้นหลังโลโก้ */
+    --bg-mid: #7d3c8c;  /* ม่วงกลาง */
+    --pink-accent: #f04e8d;
     --pink1: #fff5f8;
     --pink2: #ffcfe0;
     --pink3: #ff85b3;
     --pink4: #f04e8d;
     --hot: #d61c5d;
-    --lavender: #f9f0ff;
-    --lav2: #e0b3ff;
-    --text: #701a43;
+    --text: #4a1d5a; 
+    --text-light: #ffffff; /* สีขาวสำหรับข้อความบนพื้นเข้ม */
     --textl: #b54a7b;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
 font-family: 'Mitr', sans-serif;
-background: linear-gradient(160deg, #fff0f5 0%, #ffe4ed 50%, #ffd1e0 100%);
+/* ปรับสีพื้นหลังให้เข้มขึ้นตามที่ต้องการ */
+background: linear-gradient(160deg, #4a1d5a 0%, #632a74 50%, #8e44ad 100%);
+background-attachment: fixed;
 min-height: 100vh;
 color: var(--text);
 overflow-x: hidden;
@@ -31,12 +36,12 @@ body::before {
 content: '';
 position:fixed; inset:0;
 background:
-radial-gradient(circle at 15% 15%, rgba(255,192,203,0.4) 0%, transparent 45%),
-radial-gradient(circle at 85% 85%, rgba(224,179,255,0.3) 0%, transparent 45%);
+radial-gradient(circle at 15% 15%, rgba(255,105,180,0.2) 0%, transparent 45%),
+radial-gradient(circle at 85% 85%, rgba(142,68,173,0.3) 0%, transparent 45%);
 pointer-events:none; z-index:0;
 }
 
-.sp { position:fixed; pointer-events:none; z-index:0; animation:fl 5s ease-in-out infinite; opacity:0.6; }
+.sp { position:fixed; pointer-events:none; z-index:0; animation:fl 5s ease-in-out infinite; opacity:0.4; }
 .sp:nth-child(1){top:4%;left:5%;font-size:22px;}
 .sp:nth-child(2){top:12%;right:8%;font-size:14px;animation-delay:1s;}
 .sp:nth-child(3){top:38%;left:2%;font-size:12px;animation-delay:2s;}
@@ -61,108 +66,87 @@ pointer-events:none; z-index:0;
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid #fff;
-  box-shadow: 0 8px 25px rgba(240,78,141,0.25);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
   background: #fff;
 }
 
 .shop-name {
-font-size:2rem; font-weight:700;
-color: var(--pink4);
+font-size:2.2rem; font-weight:700;
+color: #fff; /* ปรับชื่อร้านเป็นสีขาวเพื่อให้เด่นบนพื้นเข้ม */
 letter-spacing:1px;
-text-shadow: 2px 2px 4px rgba(214,28,93,0.1);
+text-shadow: 2px 4px 8px rgba(0,0,0,0.3);
 display: flex;
 align-items: center;
 justify-content: center;
 gap: 12px;
 }
-.shop-sub { font-size:.85rem; color:var(--textl); margin-top:8px; line-height:1.7; padding:0 10px; }
+.shop-sub { font-size:.85rem; color: #f9f0ff; margin-top:12px; line-height:1.7; padding:0 10px; opacity: 0.9; }
 
 .badges { display:flex; justify-content:center; gap:7px; flex-wrap:wrap; margin-top:11px; }
 .badge {
-background:#fff; border:1.5px solid var(--pink2);
+background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3);
+backdrop-filter: blur(5px);
 border-radius:20px; padding:4px 13px;
-font-size:.72rem; color:var(--pink4); font-weight:500;
+font-size:.72rem; color:#fff; font-weight:500;
 }
 
 /* CARDS */
 .card {
-background:rgba(255,255,255,.85); backdrop-filter:blur(12px);
-border:1.5px solid rgba(255,133,179,0.3);
+background:rgba(255,255,255,0.95); backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,0.5);
 border-radius:22px; padding:20px 18px; margin-bottom:14px;
-box-shadow:0 4px 18px rgba(214,28,93,0.08), inset 0 1px 0 rgba(255,255,255,0.9);
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
 position:relative; overflow:hidden;
 animation:fadeUp .6s ease both;
 }
 
-.ct { font-size:.98rem; font-weight:600; color:var(--pink4); margin-bottom:13px; display:flex; align-items:center; gap:8px; }
+.ct { font-size:.98rem; font-weight:600; color:var(--bg-dark); margin-bottom:13px; display:flex; align-items:center; gap:8px; }
 .ct .ic { font-size:1.15rem; }
 
 /* status */
 .status-box {
-background:linear-gradient(135deg,#fff0f5,#fdf2f7);
-border:1.5px dashed var(--pink3); border-radius:16px;
+background:rgba(255,255,255,0.2);
+backdrop-filter: blur(10px);
+border:1.5px dashed rgba(255,255,255,0.4); border-radius:16px;
 padding:15px; text-align:center; margin-bottom:14px;
 animation:fadeUp .5s .12s ease both;
 }
-.s-open { font-size:1.1rem; font-weight:600; color:var(--hot); }
-.s-dot { display:inline-block; width:10px;height:10px; background:#6fcf97; border-radius:50%; margin-right:6px; box-shadow:0 0 0 4px rgba(111,207,151,.25); animation:blink 2s ease-in-out infinite; }
+.s-open { font-size:1.1rem; font-weight:600; color:#fff; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+.s-dot { display:inline-block; width:10px;height:10px; background:#6fcf97; border-radius:50%; margin-right:6px; box-shadow:0 0 10px #6fcf97; animation:blink 2s ease-in-out infinite; }
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:.35;}}
 
-.div { text-align:center; color:var(--pink3); font-size:.85rem; letter-spacing:7px; margin:20px 0 14px; font-weight: bold;}
+/* Divider Text */
+.div { text-align:center; color:#fff; font-size:.95rem; letter-spacing:5px; margin:25px 0 15px; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.3);}
 
 /* Image Preview Style */
 .group-preview {
   width: 100%;
-  height: 180px;
+  height: auto;
+  aspect-ratio: 1 / 1.4;
   object-fit: cover;
   border-radius: 14px;
   margin-bottom: 12px;
   border: 1px solid var(--pink2);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .lnk {
 display:flex; align-items:center; gap:10px;
-background:linear-gradient(135deg,#fffafa,#fff2f7);
+background:#fff;
 border:1.5px solid rgba(255,133,179,0.2); border-radius:14px;
 padding:10px 14px; text-decoration:none; color:var(--text);
 font-size:.84rem; transition:all .2s; margin-bottom:9px;
 }
-.lnk:hover { transform:translateX(4px); background:#fff; border-color: var(--pink3); }
-
-.pay-row { display:flex; gap:8px; flex-wrap:wrap; }
-.pay-pill {
-background:linear-gradient(135deg,#fff0f5,#fff);
-border:1.5px solid rgba(255,133,179,0.2); border-radius:12px;
-padding:6px 12px; font-size:.78rem; color:var(--text);
-display:flex; align-items:center; gap:5px;
-}
+.lnk:hover { transform:translateX(4px); background:var(--pink1); border-color: var(--pink3); }
 
 .hi-box {
-background:linear-gradient(135deg,var(--pink3),var(--pink4));
+background:linear-gradient(135deg, #7d3c8c, #4a1d5a);
 border-radius:16px; padding:13px 16px; color:#fff;
 text-align:center; margin-bottom:12px;
-box-shadow:0 6px 20px rgba(214,28,93,0.2);
+box-shadow:0 6px 20px rgba(0,0,0,0.15);
 }
 
-.cta-wrap { text-align:center; padding:8px 0; animation:fadeUp .6s .6s ease both; }
-.cta-btn {
-display:inline-block; width:100%; max-width:300px;
-background:linear-gradient(135deg,var(--pink3),var(--pink4));
-color:#fff; font-family: 'Mitr', sans-serif;
-font-size:1rem; font-weight:500; padding:14px 36px;
-border-radius:50px; text-decoration:none; border:none; cursor:pointer;
-box-shadow:0 8px 24px rgba(214,28,93,0.3), inset 0 1px 0 rgba(255,255,255,0.3);
-transition:all .3s; animation:glow 3s ease-in-out infinite;
-}
-@keyframes glow{0%,100%{box-shadow:0 8px 24px rgba(214,28,93,0.3),inset 0 1px 0 rgba(255,255,255,0.3);}50%{box-shadow:0 10px 36px rgba(214,28,93,0.5),inset 0 1px 0 rgba(255,255,255,0.3);}}
-
-.footer { text-align:center; padding:16px 0 8px; font-size:.73rem; color:var(--textl); }
-.socs { display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
-.soc {
-background:#fff; border:1.5px solid var(--pink2);
-border-radius:20px; padding:6px 15px;
-font-size:.78rem; color:var(--text); text-decoration:none; transition:all .2s;
-}
+.footer { text-align:center; padding:20px 0 8px; font-size:.73rem; color:rgba(255,255,255,0.8); }
 
 @keyframes fadeUp { from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);} }
 </style>
@@ -194,7 +178,7 @@ font-size:.78rem; color:var(--text); text-decoration:none; transition:all .2s;
   </div>
 
   <div class="status-box">
-    <div class="s-open"><span class="s-dot"></span>มีค้าบ พร้อมให้บริการค่ะ 🎀</div>
+    <div class="s-open"><span class="s-dot"></span>เปิดร้านพร้อมให้บริการค่ะ 🎀</div>
   </div>
 
   <div class="card">
@@ -211,21 +195,11 @@ font-size:.78rem; color:var(--text); text-decoration:none; transition:all .2s;
     </div>
   </div>
 
-  <div class="card">
-    <div class="ct"><span class="ic">📋</span> ระยะเวลาทำงาน</div>
-    <div style="font-size:.84rem;line-height:1.8;color:var(--text);">
-      ⏱️ <b>คิวปกติ:</b> 3-7 วัน หรือมากกว่า<br>
-      ⚡ <b>คิวเร่ง:</b> 2-3 วัน หรือมากกว่า<br>
-      🔥 <b>คิวเร่งไฟ:</b> ภายใน 24 ชม.<br>
-      💥 <b>คิวเร่งไฟลุก:</b> ภายใน 12 ชม.
-    </div>
-  </div>
-
   <div class="div">🧸 กลุ่มในเครือ 🧸</div>
 
   <div class="card">
     <div class="ct"><span class="ic">📦</span> Babybear Box Group V1</div>
-    <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/c97693827cf5d484ba91119892f3f218.jpeg" class="group-preview" alt="V1 Preview">
+    <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/35e8b96cde048d76df11466e2956c3e9.jpeg" class="group-preview" alt="V1 Preview">
     <div style="font-size:.82rem;line-height:1.7;color:var(--text);margin-bottom:10px;">
       ꒰ กลุ่มบล็อคสุดน่ารักที่ทำได้ทั้งแนวน่ารัก,แนวเกม ꒱<br>
       യ <b>ค่าเข้า 89 บาท</b> · แอดมินใจดี ดึงเมลไวมาก ♡̷̷̷
@@ -238,7 +212,7 @@ font-size:.78rem; color:var(--text); text-decoration:none; transition:all .2s;
 
   <div class="card">
     <div class="ct"><span class="ic">🎁</span> Babybear Box V2</div>
-    <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/c97693827cf5d484ba91119892f3f218.jpeg" class="group-preview" alt="V2 Preview">
+    <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/c5f2a92ae7e509ad3eab0171d8041ddd.jpeg" class="group-preview" alt="V2 Preview">
     <div style="font-size:.82rem;line-height:1.7;color:var(--text);margin-bottom:10px;">
       ꔛ กลุ่มบล็อคเวอร์ชั่น 2 เปิดแล้วค้า ทำได้ทั้งแนวน่ารักและกึ่งAds ꔛ<br>
       🤍🧸 <b>ราคา 99 บาท เท่านั้น ❕</b>
@@ -251,7 +225,7 @@ font-size:.78rem; color:var(--text); text-decoration:none; transition:all .2s;
 
   <div class="card">
     <div class="ct"><span class="ic">✨</span> Babybear Box Group V3</div>
-    <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/c97693827cf5d484ba91119892f3f218.jpeg" class="group-preview" alt="V3 Preview">
+    <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/cc04c20356e769b9872ac9c14cf238d7.jpeg" class="group-preview" alt="V3 Preview">
     <div style="font-size:.82rem;line-height:1.7;color:var(--text);margin-bottom:10px;">
       • กลุ่มบล็อคสุดเฉพาะเวอร์ชั่น 3 อัพทั้งหมด 33 บล็อค<br>
       𓊆ྀི <b>ราคาโปร 79฿ เท่านั้นค้าบ </b> 𓊇ྀི
@@ -264,7 +238,7 @@ font-size:.78rem; color:var(--text); text-decoration:none; transition:all .2s;
 
   <div class="card">
     <div class="ct"><span class="ic">✉️</span> Babybear Inbox</div>
-    <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/c97693827cf5d484ba91119892f3f218.jpeg" class="group-preview" alt="Inbox Preview">
+    <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/0bee5c27d99a04eb0cfc397108481dc0.jpeg" class="group-preview" alt="Inbox Preview">
     <div style="font-size:.82rem;line-height:1.7;color:var(--text);margin-bottom:10px;">
       กลุ่มที่มีกรอบคอนแทคที่ทุกคนตามหา อัพงาน 20+ กรอบ<br>
       ‎⋆｡˚☽˚ <b>ค่าเข้าโปร 99 บาท •☁︎</b>
@@ -284,12 +258,6 @@ font-size:.78rem; color:var(--text); text-decoration:none; transition:all .2s;
     <a href="https://www.facebook.com/gibmbabybear?" class="lnk" target="_blank">
       <span class="lnk-ic">📘</span>
       <div><div class="lnk-name">Facebook</div><div class="lnk-desc">Gibm ( Babybear )</div></div>
-    </a>
-  </div>
-
-  <div class="cta-wrap">
-    <a href="https://lin.ee/UdLcwvD" class="cta-btn" target="_blank">
-      🧸 ติดต่อสั่งงาน / เข้ากลุ่ม
     </a>
   </div>
 
