@@ -8,14 +8,10 @@
 <style>
   :root {
     --bg-dark: #7d3c8c; 
-    --bg-mid: #a569bd;  
     --pink-accent: #f04e8d;
-    --pink1: #fff5f8;
-    --pink2: #ffcfe0;
-    --pink3: #ff85b3;
-    --pink4: #f04e8d;
-    --text: #4a1d5a; 
-    --header-bg: rgba(225, 190, 231, 0.6); /* สีแถบหัวข้อตามรูป */
+    --pink-hot: #fb4b8e; 
+    --purple-light: #e8d5f5; 
+    --text-color: #4a1d5a;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
 
@@ -24,109 +20,142 @@ font-family: 'Mitr', sans-serif;
 background: linear-gradient(160deg, #f9f0ff 0%, #e8d5f5 50%, #d7bde2 100%);
 background-attachment: fixed;
 min-height: 100vh;
-color: var(--text);
-overflow-x: hidden;
+color: var(--text-color);
 }
 
-.wrap { max-width:480px; margin:0 auto; padding:5px 14px 40px; position:relative; z-index:1; }
+.wrap { max-width:480px; margin:0 auto; padding:10px 14px 40px; }
 
-/* HEADER */
+/* HEADER - ปรับตามรูปที่ 5 */
 .header { text-align:center; padding:20px 0 10px; }
 .logo-img {
   width: 140px; height: 140px;
   object-fit: cover; border-radius: 50%;
-  border: 4px solid #fff; background: #fff;
+  border: 4px solid #fff;
   box-shadow: 0 8px 25px rgba(125, 60, 140, 0.2);
 }
-
-.shop-name {
-font-size: 2.8rem; /* ใหญ่พิเศษ */
-font-weight: 700;
-color: var(--pink-accent); 
-margin: 10px 0;
-}
-.shop-sub { font-size: 1.1rem; font-weight: 500; line-height: 1.6; opacity: 0.9; }
-
-/* ปรับหัวข้อแบบมีแถบสีตามรูปตัวอย่าง */
-.div { 
-  background: var(--header-bg);
-  padding: 10px;
-  border-radius: 12px;
-  text-align: center; 
-  color: var(--text); 
-  font-size: 1.4rem; /* ตัวใหญ่ */
+.shop-name { 
+  font-size: 2.8rem; 
   font-weight: 700; 
-  margin: 5px 0 10px; /* ลดระยะห่างให้ชิดปกติ */
+  color: var(--pink-accent); 
+  margin: 10px 0; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 10px; 
+}
+.shop-sub { 
+  font-size: 1.15rem; 
+  font-weight: 500; 
+  line-height: 1.6; 
+  opacity: 0.9; 
+  margin-bottom: 10px;
+}
+
+/* ปุ่ม Badge ใต้ชื่อร้าน */
+.badges { display:flex; justify-content:center; gap:7px; flex-wrap:wrap; margin-bottom:15px; }
+.badge {
+  background: #fff;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  color: var(--text-color);
+}
+
+/* กรอบสถานะ - แถบสีม่วงเข้มตามรูปที่ 5 */
+.status-bar {
+  background: var(--bg-dark);
+  color: #fff;
+  border-radius: 15px;
+  padding: 12px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
+}
+.s-dot { width: 10px; height: 10px; background: #6fcf97; border-radius: 50%; box-shadow: 0 0 8px #6fcf97; }
+
+/* แถบหัวข้อ - ตัวหนังสือใหญ่ตามรูปที่ 1, 3, 5 */
+.div { 
+  background: var(--purple-light);
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center; 
+  font-size: 1.5rem; 
+  font-weight: 700; 
+  margin: 15px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #7d5a91;
 }
 
-/* กรอบสถานะ */
-.status-box {
-background: rgba(255, 255, 255, 0.5);
-border: 2px dashed var(--pink3);
-border-radius: 18px;
-padding: 12px; 
-text-align: center; 
-margin-bottom: 15px;
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 8px;
+/* กล่องโปรโมชั่น - สีชมพูตามรูปที่ 3, 5 */
+.promo-box {
+  background: var(--pink-hot);
+  border-radius: 15px;
+  padding: 15px;
+  color: #fff;
+  text-align: center;
+  margin-top: 15px;
 }
-.s-open { font-size: 1.2rem; font-weight: 700; color: var(--pink4); }
-.s-dot { width: 12px; height: 12px; background: #6fcf97; border-radius: 50%; }
+.promo-box b { font-size: 1.4rem; display: block; margin-bottom: 5px; }
+.promo-box span { font-size: 1.05rem; }
 
 /* CARDS */
 .card {
-background:rgba(255,255,255,0.95);
-border-radius:22px; padding:20px; margin-bottom:12px;
-box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 25px; 
+  padding: 22px; 
+  margin-bottom: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
 }
-
-.ct { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 10px; }
-
-/* ขยายตัวหนังสือในเนื้อหา */
-.desc-text { font-size: 1.05rem; font-weight: 500; line-height: 1.7; margin-bottom: 10px; }
-.price-pink { color: var(--pink-accent); font-weight: 800; font-size: 1.15rem; }
+.ct { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.desc-text { font-size: 1.1rem; font-weight: 500; line-height: 1.8; }
+.price-pink { color: var(--pink-accent); font-weight: 800; font-size: 1.25rem; }
 
 /* ปุ่มลิงก์ */
 .lnk {
-display:flex; align-items:center; gap:12px;
-background:#fff; border:1.5px solid var(--pink2); 
-border-radius:14px; padding:12px 16px; 
-text-decoration:none; color:var(--text);
-margin-bottom:8px;
+  display:flex; align-items:center; gap:12px;
+  background:#fff; border:1px solid #f0f0f0; 
+  border-radius:15px; padding:15px; 
+  text-decoration:none; color:var(--text-color);
+  margin-top: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
-.lnk-name { font-weight: 700; font-size: 1.2rem; }
-.lnk-desc { font-size: 1rem; opacity: 0.8; }
+.lnk-name { font-weight: 700; font-size: 1.25rem; }
+.lnk-desc { font-size: 1.05rem; opacity: 0.8; }
 
-.hi-box {
-background: linear-gradient(135deg, var(--pink3), var(--pink4));
-border-radius:16px; padding:15px; color:#fff;
-text-align:center; font-size: 1.1rem; font-weight: 600;
-}
-
-.group-preview { width: 100%; border-radius: 14px; margin-bottom: 10px; }
-.footer { text-align:center; padding:20px; font-size:0.9rem; opacity: 0.6; }
+.group-preview { width: 100%; border-radius: 15px; margin: 12px 0; }
+.footer { text-align:center; padding:25px; font-size:0.95rem; opacity: 0.5; }
 </style>
 </head>
 <body>
 
 <div class="wrap">
   <div class="header">
-    <div class="logo-wrapper">
-      <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/c97693827cf5d484ba91119892f3f218.jpeg" class="logo-img">
+    <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/c97693827cf5d484ba91119892f3f218.jpeg" class="logo-img">
+    <div class="shop-name">🧸 Babybear Studio 🧸</div>
+    <div class="shop-sub">
+      ยินดีต้อนรับสู่ร้าน “ Babybear Studio “ ค้าบ<br>
+      กิ้บยินดีให้บริการทุกท่านที่เข้ามาใช้บริการนะคะ ✨
     </div>
-    <div class="shop-name">Babybear Studio</div>
-    <div class="shop-sub">ยินดีต้อนรับสู่ร้าน Babybear Studio ค้าบ ✨</div>
+    <div class="badges">
+      <span class="badge">🎨 รับทำป้าย</span>
+      <span class="badge">💧 ลายน้ำ</span>
+      <span class="badge">📢 งาน Ads</span>
+    </div>
   </div>
 
-  <div class="status-box">
+  <div class="status-bar">
     <span class="s-dot"></span>
-    <div class="s-open">พร้อมรับออเดอร์อยู่นะคะ 🎀</div>
+    <div>เปิดร้านพร้อมให้บริการค่ะ 🎀</div>
   </div>
 
   <div class="card">
@@ -137,9 +166,9 @@ text-align:center; font-size: 1.1rem; font-weight: 600;
       💰 <b>ราคางานเริ่มต้น:</b> <span class="price-pink">99฿ +</span><br>
       💧 <b>ลายน้ำเริ่มต้น:</b> <span class="price-pink">69฿ +</span>
     </div>
-    <div class="hi-box">
-      <b>🎁 โปรโมชั่นพิเศษ</b><br>
-      สั่งเยอะมีส่วนลด & ของแถมให้ตลอดค้า
+    <div class="promo-box">
+      <b>🎁 โปรโมชั่นพิเศษ</b>
+      <span>สั่งเยอะมีส่วนลด & ของแถมพิเศษให้ตลอดค้า</span>
     </div>
   </div>
 
@@ -150,21 +179,61 @@ text-align:center; font-size: 1.1rem; font-weight: 600;
     <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/35e8b96cde048d76df11466e2956c3e9.jpeg" class="group-preview">
     <div class="desc-text">
       ꒰ กลุ่มบล็อคสุดน่ารักที่ทำได้ทั้งแนวน่ารัก,แนวเกม ꒱<br>
-      യ <b>ค่าเข้า <span class="price-pink">89 บาท</span></b>
+      യ <b>ค่าเข้า <span class="price-pink">89 บาท</span></b> · ดึงเมลไวมาก ♡̷̷̷
     </div>
-    <a href="#" class="lnk">
+    <a href="https://drive.google.com/drive/folders/1NAGLOk76_A7IiOaQ2fpkp3pkvhyx8gC3" class="lnk" target="_blank">
+      <span style="font-size:1.5rem">🖼️</span>
       <div><div class="lnk-name">Example Box V1</div><div class="lnk-desc">คลิกเพื่อดูตัวอย่างผลงานค่ะ</div></div>
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="ct">🎁 Babybear Box V2</div>
+    <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/c5f2a92ae7e509ad3eab0171d8041ddd.jpeg" class="group-preview">
+    <div class="desc-text">
+      ꔛ กลุ่มบล็อคเวอร์ชั่น 2 เปิดแล้วค้า ทำได้ทั้งแนวน่ารักและกึ่งAds ꔛ<br>
+      🤍🧸 <b>ราคา <span class="price-pink">99 บาท</span> เท่านั้น ❕</b>
+    </div>
+    <a href="https://drive.google.com/drive/folders/13EpXohkJY-dJRZg0_3NxkAuGNjJrtUHi" class="lnk" target="_blank">
+      <span style="font-size:1.5rem">🖼️</span>
+      <div><div class="lnk-name">Example Box V2</div><div class="lnk-desc">คลิกเพื่อดูตัวอย่างเวอร์ชั่น 2 ค่ะ</div></div>
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="ct">✨ Babybear Box Group V3</div>
+    <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/cc04c20356e769b9872ac9c14cf238d7.jpeg" class="group-preview">
+    <div class="desc-text">
+      • กลุ่มบล็อคสุดเฉพาะเวอร์ชั่น 3 อัพทั้งหมด 33 บล็อค<br>
+      𓊆ྀི <b>ราคาโปร <span class="price-pink">79฿</span> เท่านั้นค้าบ </b> 𓊇ྀི
+    </div>
+    <a href="https://drive.google.com/drive/folders/1-DqsTlUnaGKCuyPKdqknSyjOX4oEDhCU" class="lnk" target="_blank">
+      <span style="font-size:1.5rem">🖼️</span>
+      <div><div class="lnk-name">Example Box V3</div><div class="lnk-desc">คลิกเพื่อดูตัวอย่างเวอร์ชั่น 3 ค่ะ</div></div>
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="ct">✉️ Babybear Inbox</div>
+    <img src="https://raw.githubusercontent.com/julie-vwb/babybear-design/main/0bee5c27d99a04eb0cfc397108481dc0.jpeg" class="group-preview">
+    <div class="desc-text">
+      กลุ่มที่มีกรอบคอนแทคที่ทุกคนตามหา อัพงาน 20+ กรอบ<br>
+      ‎⋆｡˚☽˚ <b>ค่าเข้าโปร <span class="price-pink">99 บาท</span> •☁︎</b>
+    </div>
+    <a href="https://drive.google.com/drive/folders/1-ZYQuoeuwHIOnu8GdsfXeBslBKocVLJZ" class="lnk" target="_blank">
+      <span style="font-size:1.5rem">🖼️</span>
+      <div><div class="lnk-name">Example Inbox</div><div class="lnk-desc">คลิกเพื่อดูตัวอย่างกรอบคอนแทคค่ะ</div></div>
     </a>
   </div>
 
   <div class="div">📱 ช่องทางติดต่อ 📱</div>
   
   <div class="card">
-    <a href="https://lin.ee/UdLcwvD" class="lnk">
+    <a href="https://lin.ee/UdLcwvD" class="lnk" target="_blank">
       <span style="font-size:1.5rem">💚</span>
       <div><div class="lnk-name">Line Official</div><div class="lnk-desc">@151jqsev (สั่งงานหลัก)</div></div>
     </a>
-    <a href="https://www.facebook.com/gibmbabybear?" class="lnk">
+    <a href="https://www.facebook.com/gibmbabybear?" class="lnk" target="_blank">
       <span style="font-size:1.5rem">📘</span>
       <div><div class="lnk-name">Facebook</div><div class="lnk-desc">Gibm ( Babybear )</div></div>
     </a>
